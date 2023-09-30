@@ -45,6 +45,7 @@ app.get('/', (req, res) => {
 
 require('./app/routes/admin.routes.js')(app);
 require('./app/routes/chat.routes.js')(app);
+require('./app/routes/certif.routes.js')(app);
 
 // listen for requests
 app.listen(PORT,   () => {
