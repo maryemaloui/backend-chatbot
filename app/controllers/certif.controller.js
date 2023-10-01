@@ -12,8 +12,7 @@ exports.create = (req, res) => {
     // Create a certif
     const certif = new Certif({
         reference: req.body.reference || "Untitled Certif",
-        certif: req.body.certif,
-        prix : req.body.prix
+        certif: req.body.certif
     });
 
     // Save certif in the database
@@ -73,8 +72,7 @@ exports.update = (req, res) => {
     // Find certif and update it with the request body
     Certif.findByIdAndUpdate(req.params.certifId, {
         reference: req.body.reference || "Untitled certif",
-        certif: req.body.certif,
-        prix : req.body.prix
+        certif: req.body.certif
     }, {new: true})
     .then(certif => {
         if(!certif) {

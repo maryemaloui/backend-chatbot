@@ -8,14 +8,9 @@ const CertifSchema = mongoose.Schema({
     },
     certif: {
         type: String,
-       
-       
-},
-    prix: {
-            type: String,
-            
-           
+    
     },
+    
 }, {
     timestamps: true
 });
