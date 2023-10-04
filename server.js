@@ -32,12 +32,22 @@ mongoose.Promise = global.Promise;
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });*/
-mongoose.connect(
+/*mongoose.connect(
     "mongodb://root:root@mongo:27017",
     { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(db => {
       console.log("Database connected");
-    }).catch(error => console.log("Could not connect to mongo db " + error));
+    }).catch(error => console.log("Could not connect to mongo db " + error));*/
+    const mongoose = require("mongoose");
 
+    mongoose
+      .connect(
+        "mongodb://root:root@mongo:27017",
+        { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
+      )
+      .then((db) => {
+        console.log("Database connected");
+      })
+      .catch((error) => console.log("Could not connect to MongoDB " + error));
 // define a simple route
 app.get('/', (req, res) => {
     res.json({"message": "Welcome to Rest API By LinSoft."});
