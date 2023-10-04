@@ -32,16 +32,12 @@ mongoose.Promise = global.Promise;
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });*/
-/*mongoose.connect(
-    "mongodb://root:root@mongo:27017",
-    { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(db => {
-      console.log("Database connected");
-    }).catch(error => console.log("Could not connect to mongo db " + error));*/
-    const mongoose = require("mongoose");
+
+   
 
     mongoose
-      .connect(
-        "mongodb://root:root@mongo:27017",
+    .connect(
+        "mongodb://mongodb-service:27017/backend",
         { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
       )
       .then((db) => {
